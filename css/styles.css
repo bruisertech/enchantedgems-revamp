@@ -1,0 +1,1286 @@
+/* ==========================================================================
+   ENCHANTED GEMS - LUXURY ESOTERIC / PRANA-INSPIRED STYLESHEET
+   Brand Colors: PANTONE 2597 C (#5C068C) · Stalactite (#F7F6F2) · Alchemical Gold
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --bg-deep: #07030a;
+  --bg-midnight: #0c0514;
+  --bg-card: rgba(18, 10, 29, 0.72);
+  --bg-card-hover: rgba(26, 14, 42, 0.88);
+  --bg-glass: rgba(247, 246, 242, 0.04);
+  
+  --purple-brand: #5C068C;       /* PANTONE 2597 C */
+  --purple-glow: rgba(92, 6, 140, 0.5);
+  --purple-deep: #2A0340;
+  
+  --gold-prana: #D4AF37;         /* Alchemical Gold */
+  --gold-light: #F3D49A;
+  --gold-pale: #FFF3D1;
+  --gold-glow: rgba(212, 175, 55, 0.35);
+  --gold-border: rgba(212, 175, 55, 0.22);
+  
+  --stalactite: #F7F6F2;        /* PANTONE 11-4101 TCX */
+  --text-muted: #A89CB5;
+  --text-dim: #6E637B;
+  
+  /* Typography */
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Transitions */
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-deep);
+  color: var(--stalactite);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  background: radial-gradient(circle at 50% 15%, #180829 0%, var(--bg-deep) 70%);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   1. PRELOADER ESTILO PRANA
+   ========================================================================== */
+#eg-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: radial-gradient(circle at 50% 48%, #1D0630 0%, #08030D 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+}
+
+#eg-preloader.eg-fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.eg-preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  max-width: 90vw;
+}
+
+.eg-orbital-box {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eg-orbit-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: egOrbitSpin 3.8s linear infinite;
+}
+
+.eg-orbit-bg {
+  fill: none;
+  stroke: rgba(243, 212, 154, 0.12);
+  stroke-width: 1.5;
+}
+
+.eg-orbit-glow-line {
+  fill: none;
+  stroke: url(#preloaderGold);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-dasharray: 90 340;
+  filter: drop-shadow(0 0 8px var(--gold-light));
+}
+
+@keyframes egOrbitSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.eg-preloader-logo {
+  width: 105px;
+  height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: egLogoBreathe 2.8s ease-in-out infinite alternate;
+}
+
+.eg-preloader-logo img, 
+.eg-preloader-logo svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 16px var(--purple-glow));
+}
+
+@keyframes egLogoBreathe {
+  0% { transform: scale(0.97); filter: drop-shadow(0 0 12px var(--purple-glow)); }
+  100% { transform: scale(1.03); filter: drop-shadow(0 0 24px rgba(243, 212, 154, 0.45)); }
+}
+
+.eg-preloader-brand {
+  margin-top: 26px;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  letter-spacing: 0.38em;
+  color: var(--stalactite);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.eg-preloader-status {
+  margin-top: 8px;
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  color: var(--gold-prana);
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.9;
+  position: relative;
+  overflow: hidden;
+}
+
+.eg-preloader-progress {
+  width: 140px;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.18);
+  margin-top: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.eg-preloader-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, transparent, var(--gold-light), var(--gold-prana));
+  transition: width 1.4s ease-out;
+}
+
+/* ==========================================================================
+   2. ANNOUNCEMENT & HEADER (LUXURY GLASSMORPHISM)
+   ========================================================================== */
+.announcement-bar {
+  background: linear-gradient(90deg, #1A0729 0%, #2A093D 50%, #1A0729 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 8px 16px;
+  color: var(--gold-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.announcement-bar span.sparkle {
+  color: var(--gold-prana);
+  font-size: 13px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 4, 16, 0.82);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  transition: var(--transition-smooth);
+}
+
+.header-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.main-nav a {
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--gold-light);
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold-prana);
+  transition: var(--transition-smooth);
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.header-brand-logo {
+  width: 44px;
+  height: 44px;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.35));
+}
+
+.header-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-brand-name {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  letter-spacing: 0.28em;
+  font-weight: 600;
+  color: var(--stalactite);
+  line-height: 1.1;
+}
+
+.header-brand-tagline {
+  font-size: 8.5px;
+  letter-spacing: 0.32em;
+  color: var(--gold-prana);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-btn {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.header-btn:hover {
+  color: var(--gold-light);
+}
+
+.cart-trigger {
+  position: relative;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid var(--gold-border);
+  border-radius: 99px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--stalactite);
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cart-trigger:hover {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: var(--gold-prana);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+}
+
+.cart-count-badge {
+  background: var(--purple-brand);
+  color: var(--stalactite);
+  font-size: 10px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gold-light);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 20px;
+  color: var(--stalactite);
+}
+
+/* ==========================================================================
+   3. HERO SECTION (ATMOSPHERIC PRANA STYLE)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px;
+  overflow: hidden;
+}
+
+#starfield-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-glow-orb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(92, 6, 140, 0.38) 0%, rgba(12, 5, 20, 0) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+  filter: blur(40px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 18px;
+  border-radius: 99px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--gold-light);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: egFadeUp 1s ease-out;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 5.5vw, 64px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  margin-bottom: 22px;
+  color: var(--stalactite);
+  text-shadow: 0 0 35px rgba(247, 246, 242, 0.15);
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
+  font-weight: 400;
+  text-shadow: 0 0 25px rgba(243, 212, 154, 0.4);
+}
+
+.hero-description {
+  font-size: clamp(14px, 1.8vw, 17px);
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 36px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.hero-cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.btn-primary-gold {
+  background: linear-gradient(135deg, #E6C87C 0%, #C99E44 50%, #B8892E 100%);
+  color: #0B0412;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 16px 34px;
+  border-radius: 99px;
+  box-shadow: 0 4px 25px rgba(201, 158, 68, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(201, 158, 68, 0.5);
+  filter: brightness(1.08);
+}
+
+.btn-ghost-mystic {
+  border: 1px solid var(--gold-border);
+  color: var(--stalactite);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  border-radius: 99px;
+  background: rgba(247, 246, 242, 0.03);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(8px);
+}
+
+.btn-ghost-mystic:hover {
+  border-color: var(--gold-prana);
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Trust Pillars Banner */
+.trust-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1080px;
+  margin: 60px auto 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  padding-top: 36px;
+}
+
+.pillar-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.pillar-item span.icon {
+  font-size: 16px;
+  color: var(--gold-light);
+}
+
+/* ==========================================================================
+   4. INTENTION FILTER TABS
+   ========================================================================== */
+.section-wrapper {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 70px 24px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-prana);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3.8vw, 42px);
+  font-weight: 500;
+  color: var(--stalactite);
+  letter-spacing: 0.08em;
+}
+
+.intention-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.intention-pill {
+  padding: 10px 22px;
+  border-radius: 99px;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  transition: var(--transition-smooth);
+}
+
+.intention-pill:hover,
+.intention-pill.active {
+  color: #07030A;
+  background: linear-gradient(135deg, #F3D49A 0%, #D4AF37 100%);
+  border-color: var(--gold-light);
+  box-shadow: 0 2px 18px rgba(212, 175, 55, 0.3);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   5. PRODUCT GRID & GLASSMORPHIC CARDS
+   ========================================================================== */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 28px;
+}
+
+.product-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  background: var(--bg-card-hover);
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 16px 36px rgba(10, 4, 18, 0.8), 0 0 24px rgba(92, 6, 140, 0.25);
+}
+
+.card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 10;
+  padding: 5px 12px;
+  border-radius: 99px;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: rgba(14, 5, 23, 0.82);
+  border: 1px solid var(--gold-prana);
+  color: var(--gold-light);
+  backdrop-filter: blur(8px);
+}
+
+.card-wishlist {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(14, 5, 23, 0.6);
+  border: 1px solid rgba(247, 246, 242, 0.15);
+  color: var(--stalactite);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.card-wishlist:hover {
+  background: var(--purple-brand);
+  color: #fff;
+  border-color: var(--purple-brand);
+}
+
+.card-media {
+  position: relative;
+  width: 100%;
+  padding-top: 105%;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #240A36 0%, #0F0417 80%);
+}
+
+.card-media img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .card-media img {
+  transform: scale(1.07);
+}
+
+.card-quick-actions {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition-smooth);
+}
+
+.product-card:hover .card-quick-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-card-action {
+  flex: 1;
+  padding: 10px;
+  background: rgba(12, 5, 20, 0.88);
+  border: 1px solid var(--gold-prana);
+  color: var(--stalactite);
+  border-radius: 8px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.btn-card-action:hover {
+  background: var(--gold-prana);
+  color: #07030A;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-gem-meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-prana);
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  color: var(--stalactite);
+  font-weight: 500;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.card-description {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+  padding-top: 14px;
+}
+
+.card-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-cop {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--gold-light);
+}
+
+.price-usd {
+  font-size: 10.5px;
+  color: var(--text-dim);
+}
+
+.card-add-btn {
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--gold-border);
+  color: var(--stalactite);
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.card-add-btn:hover {
+  background: var(--gold-prana);
+  color: #07030A;
+  border-color: var(--gold-prana);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   6. ORÁCULO MÍSTICO DE GEMAS (FEATURE INTERACTIVO ESTILO PRANA)
+   ========================================================================== */
+.oracle-section {
+  background: radial-gradient(circle at center, #1B082D 0%, #0A0410 75%);
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  padding: 90px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.oracle-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.oracle-medallion-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 0 18px var(--gold-light));
+}
+
+.oracle-card-box {
+  background: rgba(14, 6, 23, 0.85);
+  border: 1px solid var(--gold-prana);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 40px rgba(92, 6, 140, 0.35);
+  backdrop-filter: blur(14px);
+  margin-top: 36px;
+}
+
+.oracle-inputs {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.oracle-select {
+  background: rgba(247, 246, 242, 0.05);
+  border: 1px solid var(--gold-border);
+  color: var(--stalactite);
+  padding: 12px 20px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-family: inherit;
+  outline: none;
+}
+
+.oracle-select option {
+  background: #12061F;
+  color: var(--stalactite);
+}
+
+.oracle-result {
+  margin-top: 30px;
+  padding-top: 26px;
+  border-top: 1px dashed rgba(212, 175, 55, 0.25);
+  display: none;
+}
+
+.oracle-result.active {
+  display: block;
+  animation: egFadeUp 0.6s ease-out;
+}
+
+.oracle-gem-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+
+.oracle-ritual-text {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: 0 auto 20px;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   7. PHILOSOPHY & TESTIMONIALS
+   ========================================================================== */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.philosophy-visual {
+  position: relative;
+  text-align: center;
+}
+
+.philosophy-visual svg {
+  max-width: 380px;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.25));
+}
+
+.philosophy-text h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 36px);
+  margin-bottom: 20px;
+  color: var(--stalactite);
+  line-height: 1.25;
+}
+
+.philosophy-text p {
+  color: var(--text-muted);
+  font-size: 14.5px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.testimonial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: 14px;
+  padding: 28px;
+  position: relative;
+}
+
+.testimonial-stars {
+  color: var(--gold-prana);
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.testimonial-quote {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.testimonial-author {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--gold-light);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* ==========================================================================
+   8. CART DRAWER (INTERACTIVO)
+   ========================================================================== */
+.cart-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 2, 7, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 20000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+}
+
+.cart-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 440px;
+  background: #0E0517;
+  border-left: 1px solid var(--gold-border);
+  z-index: 20001;
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-drawer-overlay.active .cart-drawer {
+  transform: translateX(0);
+}
+
+.cart-drawer-header {
+  padding: 22px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-drawer-title {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  color: var(--stalactite);
+  text-transform: uppercase;
+}
+
+.cart-close-btn {
+  font-size: 22px;
+  color: var(--text-muted);
+}
+
+.cart-close-btn:hover {
+  color: var(--gold-light);
+}
+
+.free-shipping-bar {
+  padding: 12px 22px;
+  background: rgba(92, 6, 140, 0.22);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  font-size: 11px;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
+}
+
+.shipping-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(247, 246, 242, 0.1);
+  border-radius: 99px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.shipping-progress-fill {
+  height: 100%;
+  width: 65%;
+  background: linear-gradient(90deg, var(--gold-prana), var(--gold-light));
+  border-radius: 99px;
+}
+
+.cart-items-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+  align-items: center;
+}
+
+.cart-item-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #180829;
+}
+
+.cart-item-details h4 {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--stalactite);
+  margin-bottom: 4px;
+}
+
+.cart-item-price {
+  font-size: 12px;
+  color: var(--gold-light);
+}
+
+.cart-qty-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--gold-border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+  width: fit-content;
+}
+
+.qty-btn {
+  padding: 3px 9px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.qty-btn:hover {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--gold-light);
+}
+
+.qty-val {
+  padding: 0 8px;
+  font-size: 11px;
+}
+
+.cart-drawer-footer {
+  padding: 22px;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  background: rgba(9, 3, 14, 0.95);
+}
+
+.cart-subtotal-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.cart-checkout-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #E6C87C 0%, #C99E44 100%);
+  color: #07030A;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border-radius: 99px;
+  font-size: 12px;
+  box-shadow: 0 4px 20px rgba(201, 158, 68, 0.3);
+}
+
+.cart-checkout-btn:hover {
+  filter: brightness(1.08);
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+.site-footer {
+  background: #06020A;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  padding: 70px 24px 30px;
+  color: var(--text-muted);
+}
+
+.footer-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-brand-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  max-width: 320px;
+  margin-top: 16px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--stalactite);
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col a {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.footer-col a:hover {
+  color: var(--gold-light);
+}
+
+.newsletter-form {
+  display: flex;
+  margin-top: 14px;
+}
+
+.newsletter-input {
+  flex-grow: 1;
+  background: rgba(247, 246, 242, 0.05);
+  border: 1px solid var(--gold-border);
+  border-right: none;
+  padding: 12px 16px;
+  color: var(--stalactite);
+  font-size: 12px;
+  border-radius: 99px 0 0 99px;
+  outline: none;
+}
+
+.newsletter-btn {
+  background: var(--gold-prana);
+  color: #07030A;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0 20px;
+  border-radius: 0 99px 99px 0;
+}
+
+.footer-bottom {
+  max-width: 1320px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(247, 246, 242, 0.06);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--text-dim);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Animations */
+@keyframes egFadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .header-container {
+    grid-template-columns: auto 1fr auto;
+  }
+  .main-nav {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .trust-pillars {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  .btn-primary-gold, .btn-ghost-mystic {
+    width: 100%;
+    justify-content: center;
+  }
+}

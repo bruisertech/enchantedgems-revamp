@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Enchanted Gems · Joyería con Alma & Energía Sagrada</title>
+  <meta name="description" content="Amuletos consagrados y piedras preciosas seleccionadas a mano. Rediseño editorial y místico inspirado en la alquimia cósmica de PRANA.">
+
+  <!-- Google Fonts: Cinzel, Playfair Display, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. PRELOADER ESTILO PRANA (CON MEDALLÓN SAGRADO ADAPTADO DE ENCHANTED GEMS)
+       ========================================================================== -->
+  <div id="eg-preloader" role="status" aria-label="Cargando experiencia sagrada">
+    <div class="eg-preloader-inner">
+      <div class="eg-orbital-box">
+        <!-- SVG Orbital Circular con Brillo Dorado -->
+        <svg class="eg-orbit-svg" viewBox="0 0 180 180">
+          <defs>
+            <linearGradient id="preloaderGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFF3D1"/>
+              <stop offset="50%" stop-color="#D4AF37"/>
+              <stop offset="100%" stop-color="#9C7326"/>
+            </linearGradient>
+          </defs>
+          <circle class="eg-orbit-bg" cx="90" cy="90" r="82" />
+          <circle class="eg-orbit-glow-line" cx="90" cy="90" r="82" />
+        </svg>
+
+        <!-- Medallón Isotipo Enchanted Gems Alquímico -->
+        <div class="eg-preloader-logo">
+          <img src="assets/logo-prana-style.svg" alt="Emblema Sagrado Enchanted Gems">
+        </div>
+      </div>
+
+      <h1 class="eg-preloader-brand">ENCHANTED GEMS</h1>
+      <p class="eg-preloader-status">Sintonizando la energía de las gemas...</p>
+      
+      <div class="eg-preloader-progress">
+        <div class="eg-preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. ANNOUNCEMENT BAR
+       ========================================================================== -->
+  <aside class="announcement-bar">
+    <span class="sparkle">✦</span>
+    <span>ENVÍO GRATUITO EN COLOMBIA POR PEDIDOS SUPERIORES A $180.000 COP · CADA JOYA ES RITUALIZADA CON CUENCOS DE CUARZO</span>
+    <span class="sparkle">✦</span>
+  </aside>
+
+  <!-- ==========================================================================
+       3. SITE HEADER
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#catalogo" class="active">Colección</a></li>
+          <li><a href="#intenciones">Por Intención</a></li>
+          <li><a href="#oraculo">Oráculo Místico</a></li>
+          <li><a href="#filosofia">El Alma de la Gema</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="header-brand">
+        <img src="assets/logo-prana-style.svg" alt="Logo Enchanted Gems" class="header-brand-logo">
+        <div class="header-brand-text">
+          <span class="header-brand-name">ENCHANTED GEMS</span>
+          <span class="header-brand-tagline">ALQUIMIA & JOYERÍA SAGRADA</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <!-- Botón para volver a ver el preloader para demos -->
+        <button class="header-btn" onclick="window.replayPreloader()" title="Ver animación de entrada">
+          <span>✦ Repetir Intro</span>
+        </button>
+
+        <button class="cart-trigger" aria-label="Abrir bolsa de compras">
+          <span>Bolsa</span>
+          <span class="cart-count-badge">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       4. HERO SECTION (ATMÓSFERA PRANA)
+       ========================================================================== -->
+  <section class="hero-section">
+    <canvas id="starfield-canvas"></canvas>
+    <div class="hero-glow-orb"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span>✦</span> ALQUIMIA & JOYERÍA SAGRADA <span>✦</span>
+      </div>
+      <h2 class="hero-title">
+        JOYAS CON ALMA,<br>
+        <em>ENERGÍA PARA EL ESPÍRITU</em>
+      </h2>
+      <p class="hero-description">
+        Amuletos consagrados y piedras preciosas seleccionadas a mano en su estado más puro. 
+        Piezas únicas consagradas para elevar tu vibración, proteger tu campo áurico y acompañar tu camino sagrado.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#catalogo" class="btn-primary-gold">
+          <span>Explorar Amuletos</span>
+          <span>→</span>
+        </a>
+        <a href="#oraculo" class="btn-ghost-mystic">
+          <span>✦ Consultar el Oráculo</span>
+        </a>
+      </div>
+
+      <div class="trust-pillars">
+        <div class="pillar-item">
+          <span class="icon">◆</span>
+          <span>Piedras 100% Auténticas y Naturales</span>
+        </div>
+        <div class="pillar-item">
+          <span class="icon">✦</span>
+          <span>Consagradas con Cuencos y Humo Sagrado</span>
+        </div>
+        <div class="pillar-item">
+          <span class="icon">◆</span>
+          <span>Envíos Asegurados a Todo Colombia y el Mundo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. CATÁLOGO INTERACTIVO CON FILTRADO POR INTENCIÓN
+       ========================================================================== -->
+  <main class="section-wrapper" id="catalogo">
+    <header class="section-header" id="intenciones">
+      <span class="section-eyebrow">ELIXIRES MINERALES</span>
+      <h2 class="section-title">Colección de Amuletos por Intención</h2>
+    </header>
+
+    <nav class="intention-nav" aria-label="Filtro de intenciones">
+      <button class="intention-pill active" data-filter="all">Todas las Creaciones</button>
+      <button class="intention-pill" data-filter="proteccion">🛡️ Protección & Escudo</button>
+      <button class="intention-pill" data-filter="abundancia">✨ Abundancia & Éxito</button>
+      <button class="intention-pill" data-filter="calma">🌿 Calma & Serenidad</button>
+      <button class="intention-pill" data-filter="amor">💖 Amor Propio & Armonía</button>
+      <button class="intention-pill" data-filter="intuicion">🔮 Intuición & Sabiduría</button>
+    </nav>
+
+    <div class="products-grid">
+
+      <!-- Producto 1: Aries Zodiac Bracelet -->
+      <article class="product-card" data-id="1" data-intention="proteccion">
+        <div class="card-badge">Fuerza &amp; Protección</div>
+        <button class="card-wishlist" aria-label="Favorito">♡</button>
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1611591475870-077553b6fa0f?auto=format&fit=crop&w=600&q=80" alt="Pulsera Zodíaco Aries">
+          <div class="card-quick-actions">
+            <button class="btn-card-action quick-view-btn">Vista Sagrada</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-gem-meta">Jaspe Rojo · Ónix Negro · Fuego</div>
+          <h3 class="card-title">Pulsera Zodíaco Aries</h3>
+          <p class="card-description">Canaliza valor indomable, determinación y escudo contra energías intrusivas. Piedras volcánicas y gemas pulidas a mano.</p>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-cop">$165.000 COP</span>
+              <span class="price-usd">aprox. $40 USD</span>
+            </div>
+            <button class="card-add-btn">Añadir a Bolsa</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Producto 2: Hamsa Hand Charm -->
+      <article class="product-card" data-id="2" data-intention="proteccion">
+        <div class="card-badge">Escudo Ancestral</div>
+        <button class="card-wishlist" aria-label="Favorito">♡</button>
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" alt="Amuleto Mano de Hamsa">
+          <div class="card-quick-actions">
+            <button class="btn-card-action quick-view-btn">Vista Sagrada</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-gem-meta">Plata Ley 925 · Hilo Rojo Sagrado</div>
+          <h3 class="card-title">Amuleto Mano de Hamsa</h3>
+          <p class="card-description">Símbolo universal de bendición y desvío de mal de ojo. Tejido artesanalmente con nudos tibetanos de protección continua.</p>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-cop">$250.000 COP</span>
+              <span class="price-usd">aprox. $65 USD</span>
+            </div>
+            <button class="card-add-btn">Añadir a Bolsa</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Producto 3: Andean Opal Teardrop -->
+      <article class="product-card" data-id="3" data-intention="calma">
+        <div class="card-badge">Paz Emocional</div>
+        <button class="card-wishlist" aria-label="Favorito">♡</button>
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80" alt="Collar Teardrop de Ópalo Andino">
+          <div class="card-quick-actions">
+            <button class="btn-card-action quick-view-btn">Vista Sagrada</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-gem-meta">Ópalo Andino Natural · Gold Vermeil</div>
+          <h3 class="card-title">Collar Teardrop Ópalo Andino</h3>
+          <p class="card-description">Gema de serenidad suprema. Disuelve el estrés del chakra laríngeo y aporta una vibración envolvente como un abrazo cósmico.</p>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-cop">$260.000 COP</span>
+              <span class="price-usd">aprox. $69 USD</span>
+            </div>
+            <button class="card-add-btn">Añadir a Bolsa</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Producto 4: Solitario Citrino -->
+      <article class="product-card" data-id="4" data-intention="abundancia">
+        <div class="card-badge">Oro Solar &amp; Éxito</div>
+        <button class="card-wishlist" aria-label="Favorito">♡</button>
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80" alt="Anillo Solitario Citrino">
+          <div class="card-quick-actions">
+            <button class="btn-card-action quick-view-btn">Vista Sagrada</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-gem-meta">Citrino Natural · Baño Oro 24K</div>
+          <h3 class="card-title">Anillo Solitario Citrino</h3>
+          <p class="card-description">La piedra por excelencia de los mercaderes y creadores. Despierta el plexo solar e imanta oportunidades de expansión y riqueza.</p>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-cop">$245.000 COP</span>
+              <span class="price-usd">aprox. $65 USD</span>
+            </div>
+            <button class="card-add-btn">Añadir a Bolsa</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Producto 5: Flor de la Vida Lapislázuli -->
+      <article class="product-card" data-id="5" data-intention="intuicion">
+        <div class="card-badge">Tercer Ojo &amp; Verdad</div>
+        <button class="card-wishlist" aria-label="Favorito">♡</button>
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" alt="Pulsera Flor de la Vida">
+          <div class="card-quick-actions">
+            <button class="btn-card-action quick-view-btn">Vista Sagrada</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-gem-meta">Lapislázuli Real · Pirita Dorada</div>
+          <h3 class="card-title">Pulsera Flor de la Vida</h3>
+          <p class="card-description">Cuentas de lapislázuli azul ultramar con incrustaciones doradas de pirita natural. Desbloquea la visión intuitiva y la claridad mental.</p>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-cop">$180.000 COP</span>
+              <span class="price-usd">aprox. $45 USD</span>
+            </div>
+            <button class="card-add-btn">Añadir a Bolsa</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Producto 6: Triple Diosa Labradorita -->
+      <article class="product-card" data-id="6" data-intention="intuicion">
+        <div class="card-badge">Magia Lunar</div>
+        <button class="card-wishlist" aria-label="Favorito">♡</button>
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80" alt="Dije Sagrado Triple Diosa">
+          <div class="card-quick-actions">
+            <button class="btn-card-action quick-view-btn">Vista Sagrada</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-gem-meta">Labradorita Mística · Fases Lunares</div>
+          <h3 class="card-title">Dije Sagrado Triple Diosa</h3>
+          <p class="card-description">Labradorescencia que cambia de tono con la luz. Acompaña los ciclos de transformación personal y el despertar del poder femenino.</p>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-cop">$110.000 COP</span>
+              <span class="price-usd">aprox. $27 USD</span>
+            </div>
+            <button class="card-add-btn">Añadir a Bolsa</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Producto 7: Anillo Venturina & Rubí -->
+      <article class="product-card" data-id="7" data-intention="amor">
+        <div class="card-badge">Chakra Corazón</div>
+        <button class="card-wishlist" aria-label="Favorito">♡</button>
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=600&q=80" alt="Anillo Doble Venturina Verde y Rubí">
+          <div class="card-quick-actions">
+            <button class="btn-card-action quick-view-btn">Vista Sagrada</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-gem-meta">Venturina Verde · Rubí Raíz</div>
+          <h3 class="card-title">Anillo Doble Venturina & Rubí</h3>
+          <p class="card-description">Fusión sagrada de vitalidad y compasión. Abre el corazón al amor sincero y despierta la pasión con arraigo a la tierra.</p>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-cop">$245.000 COP</span>
+              <span class="price-usd">aprox. $65 USD</span>
+            </div>
+            <button class="card-add-btn">Añadir a Bolsa</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Producto 8: Escudo de Protección -->
+      <article class="product-card" data-id="8" data-intention="proteccion">
+        <div class="card-badge">Escudo de Protección</div>
+        <button class="card-wishlist" aria-label="Favorito">♡</button>
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=600&q=80" alt="Pulsera Escudo de Protección">
+          <div class="card-quick-actions">
+            <button class="btn-card-action quick-view-btn">Vista Sagrada</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-gem-meta">Obsidiana Dorada · Ojo de Tigre</div>
+          <h3 class="card-title">Pulsera Escudo de Protección</h3>
+          <p class="card-description">La combinación definitiva de enraizamiento y transmutación. Absorbe densidades del entorno y aporta serenidad inquebrantable.</p>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-cop">$170.000 COP</span>
+              <span class="price-usd">aprox. $42 USD</span>
+            </div>
+            <button class="card-add-btn">Añadir a Bolsa</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       6. ORÁCULO MÍSTICO DE GEMAS (FEATURE INTERACTIVO ESTILO PRANA)
+       ========================================================================== -->
+  <section class="oracle-section" id="oraculo">
+    <div class="oracle-container">
+      <img src="assets/logo-prana-style.svg" alt="Símbolo Oráculo" class="oracle-medallion-icon">
+      <span class="section-eyebrow">CONSULTA ALQUÍMICA</span>
+      <h2 class="section-title">El Oráculo de las Gemas Sagradas</h2>
+      <p style="color: var(--text-muted); max-width: 580px; margin: 12px auto 0;">
+        Las piedras no se eligen por casualidad: ellas te llaman según la energía que tu alma necesita transmutar en este instante de tu vida.
+      </p>
+
+      <div class="oracle-card-box">
+        <div class="oracle-inputs">
+          <select id="oracle-intention-select" class="oracle-select" aria-label="Selecciona tu intención">
+            <option value="proteccion">Escudo contra energías densas / Mal de ojo</option>
+            <option value="abundancia">Atracción de riqueza, clientes y prosperidad</option>
+            <option value="calma">Calmar la ansiedad y encontrar paz mental</option>
+            <option value="amor">Sanar heridas del corazón y amor propio</option>
+            <option value="intuicion">Claridad mental y despertar de intuición</option>
+          </select>
+
+          <select id="oracle-zodiac-select" class="oracle-select" aria-label="Selecciona tu signo zodiacal">
+            <option value="aries">Aries (Fuego)</option>
+            <option value="tauro">Tauro (Tierra)</option>
+            <option value="geminis">Géminis (Aire)</option>
+            <option value="cancer">Cáncer (Agua)</option>
+            <option value="leo">Leo (Fuego)</option>
+            <option value="virgo">Virgo (Tierra)</option>
+            <option value="libra">Libra (Aire)</option>
+            <option value="escorpio">Escorpio (Agua)</option>
+            <option value="sagitario">Sagitario (Fuego)</option>
+            <option value="capricornio">Capricornio (Tierra)</option>
+            <option value="acuario">Acuario (Aire)</option>
+            <option value="piscis">Piscis (Agua)</option>
+          </select>
+
+          <button id="consult-oracle-btn" class="btn-primary-gold">
+            Revelar mi Gema Sagrada ✦
+          </button>
+        </div>
+
+        <div id="oracle-result" class="oracle-result">
+          <!-- Inyectado por JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. FILOSOFÍA & RITUALES
+       ========================================================================== -->
+  <section class="section-wrapper" id="filosofia">
+    <div class="philosophy-grid">
+      <div class="philosophy-visual">
+        <img src="assets/logo-prana-style.svg" alt="Símbolo Sagrado de Enchanted Gems">
+      </div>
+      <div class="philosophy-text">
+        <span class="section-eyebrow">RITUAL DE CONSAGRACIÓN</span>
+        <h3>Cada joya es un fragmento de cosmos tallado para ti</h3>
+        <p>
+          En <strong>Enchanted Gems</strong> entendemos que un mineral no es un simple accesorio decorativo, sino un registro geológico de millones de años cargado con la vibración electromagnética de la Madre Tierra.
+        </p>
+        <p>
+          Antes de ser enviada, cada pieza atraviesa un ritual de purificación sonora con <strong>cuencos tibetanos y sahumerio de salvia blanca</strong> para calibrar su energía a la frecuencia de quien la portará.
+        </p>
+        <div style="display: flex; gap: 18px; margin-top: 24px;">
+          <div>
+            <div style="font-family: var(--font-serif); font-size: 28px; color: var(--gold-light);">100%</div>
+            <div style="font-size: 11px; letter-spacing: 0.16em; color: var(--text-muted); text-transform: uppercase;">Piedras Naturales</div>
+          </div>
+          <div style="border-left: 1px solid var(--gold-border); padding-left: 18px;">
+            <div style="font-family: var(--font-serif); font-size: 28px; color: var(--gold-light);">+1.200</div>
+            <div style="font-size: 11px; letter-spacing: 0.16em; color: var(--text-muted); text-transform: uppercase;">Almas Acompañadas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonios Reales tomados de Enchanted Gems -->
+    <div class="testimonials-grid" style="margin-top: 80px;">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">
+          "Compré el collar de cuarzo rosa y es simplemente hermoso. Siento una energía tan pacífica cuando lo llevo puesto, como si me envolviera en un abrazo cósmico. No pasa un día sin que alguien me pregunte de dónde es."
+        </p>
+        <div class="testimonial-author">Mariana S. · Bogotá, Colombia</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">
+          "Esta pulsera de ónix y malaquita es mucho más que un accesorio. Me ayuda a mantenerme enfocado y centrado en mis reuniones más difíciles. Es sutil, masculina y llena de intención sagrada."
+        </p>
+        <div class="testimonial-author">Daniel V. · Medellín, Colombia</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">
+          "El dije de la Mano de Hamsa tiene un nivel de acabado y brillo insuperable. Se nota el cariño y la consagración que le ponen a cada paquete. El envío fue rápido y el empaque parecía un regalo de los dioses."
+        </p>
+        <div class="testimonial-author">Oli & Jessica · Cali, Colombia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. CART DRAWER (INTERACTIVO)
+       ========================================================================== -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h3 class="cart-drawer-title">Bolsa Sagrada (<span class="cart-count-badge" style="display:inline-flex;">1</span>)</h3>
+        <button class="cart-close-btn" aria-label="Cerrar bolsa">&times;</button>
+      </div>
+
+      <div class="free-shipping-bar">
+        <div class="free-shipping-msg">Te faltan $15.000 COP para ENVÍO GRATUITO</div>
+        <div class="shipping-progress">
+          <div class="shipping-progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="cart-items-container">
+        <!-- Rellenado por main.js -->
+      </div>
+
+      <div class="cart-drawer-footer">
+        <div class="cart-subtotal-row">
+          <span style="letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted);">Inversión Sagrada:</span>
+          <span class="cart-subtotal-val" style="font-family: var(--font-serif); font-size: 18px; color: var(--gold-light); font-weight: 600;">$165.000 COP</span>
+        </div>
+        <button class="cart-checkout-btn">
+          Proceder al Pago Seguro ✦
+        </button>
+        <p style="text-align: center; font-size: 10px; color: var(--text-dim); margin-top: 10px;">
+          🔒 Pagos Encriptados con Wompi, PayU, Tarjetas y Nequi
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       9. FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="assets/logo-prana-style.svg" alt="Logo" style="width: 38px;">
+          <span style="font-family: var(--font-serif); font-size: 16px; color: var(--stalactite); letter-spacing: 0.22em;">ENCHANTED GEMS</span>
+        </div>
+        <p class="footer-brand-desc">
+          Tu joya perfecta no se busca; te llamará y te elegirá. Amuletos consagrados con amor, geometría sagrada y piedras naturales de origen ético.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Santuario</h4>
+        <ul>
+          <li><a href="#catalogo">Colección Completa</a></li>
+          <li><a href="#intenciones">Por Intención</a></li>
+          <li><a href="#oraculo">Oráculo de Gemas</a></li>
+          <li><a href="#filosofia">Ritual de Consagración</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Cuidado & Guía</h4>
+        <ul>
+          <li><a href="#">Guía de Limpieza de Cristales</a></li>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+          <li><a href="#">Políticas de Envío y Devolución</a></li>
+          <li><a href="#">Contacto con Alquimistas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Círculo de Luz (VIP)</h4>
+        <p style="font-size: 12px; margin-bottom: 12px; color: var(--text-muted);">
+          Recibe predicciones astrológicas mensuales, fechas de luna llena y 10% de descuento en tu primer amuleto.
+        </p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Bienvenida al Círculo de Luz! Revisa tu correo con tu código alquímico.');">
+          <input type="email" placeholder="Tu correo sagrado..." class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">Unirme</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Enchanted Gems. Todos los derechos reservados. Registrado ante la SIC.</div>
+      <div>Hecho con devoción y alquimia digital · Prototipo Revamp Estilo PRANA</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
